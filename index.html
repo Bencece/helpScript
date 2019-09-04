@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+ <meta charset="utf-8">
+<head>
+<title>Test</title>
+</head>
+<body>
+
+<h1 class="menu">Generate</h1>
+
+</body>
+</html>
+<script>
+    var menu = document.getElementsByClassName("menu");
+
+    var f = document.createElement("form"); 
+    f.setAttribute('name','f1');
+    f.setAttribute('onsubmit', 'foo()');
+
+    var i = document.createElement("input"); 
+    i.setAttribute('type',"number");
+    i.setAttribute('id','num');
+    i.setAttribute('name',"tmp");
+    i.required = true; 
+    i.autofocus = true;
+    i.min = 1;
+
+    var s = document.createElement("input"); 
+    s.setAttribute('type',"submit");
+    s.setAttribute('value',"GO");
+    s.style.backgroundColor="#88277f";
+    s.style.borderRadius="5px 5px 5px 5px";
+    s.style.color="white";
+
+    f.appendChild(i);
+    f.appendChild(s);
+
+    document.getElementsByClassName('menu')[0].appendChild(f);
+
+    function foo(){
+        var num = document.forms["f1"]["num"].value;
+        if (num!=""){
+            alert(num);
+        } else {
+            alert("Kérlek írj be egy számot! \n Please enter a number! ");
+        }
+    }
+</script> 
